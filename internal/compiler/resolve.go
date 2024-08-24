@@ -14,6 +14,10 @@ import (
 )
 
 func dataType(n *ast.TypeName) string {
+	if n == nil {
+		return ""
+	}
+
 	if n.Schema != "" {
 		return n.Schema + "." + n.Name
 	} else {
